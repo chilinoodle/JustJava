@@ -1,77 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/shop_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Quantity"
-        android:textSize="16sp"
-        android:textAllCaps="true"
-        android:textColor="#616161"
-        />
+        android:layout_centerHorizontal="true"
+        android:padding="20dp"
+        android:gravity="center"
+        android:text="MJ Online Coffee Shop"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textStyle="bold"
+        android:textAllCaps="true"/>
 
-    <Button
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:text="+"
-        android:layout_marginTop="16dp"
-        android:onClick="increment"
-        />
+    <LinearLayout
+
+        android:id="@+id/quantity_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/shop_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/enter_quantity"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:text="Enter Quantity:"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textAllCaps="true"
+            android:textColor="#616161" />
+
+        <Button
+            android:id="@+id/button_plus"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="+"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#FFFFFF"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#64B5F6"
+            android:onClick="increment" />
+
+        <TextView
+            android:id="@+id/quantity_text_view"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textAllCaps="true"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/button_minus"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="-"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#FFFFFF"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#64B5F6"
+            android:onClick="decrement" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/sugar_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/quantity_control"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/sugar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Want sugar?"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textAllCaps="true"
+            android:textColor="#616161" />
+
+        <ToggleButton
+            android:id="@+id/sugar_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#64B5F6"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:onClick="includeSugar"
+            android:textOff="NO"
+            android:textOn="YES" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/milk_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/sugar_bar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/milk"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Want milk?"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textAllCaps="true"
+            android:textColor="#616161" />
+
+        <ToggleButton
+            android:id="@+id/milk_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#64B5F6"
+            android:textColor="#FFFFFF"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:onClick="includeMilk"
+            android:textOff="NO"
+            android:textOn="YES"/>
+
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/quantity_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Price Total:"
+        android:textAppearance="?android:textAppearanceLarge"
         android:textAllCaps="true"
-        android:textColor="#000000"
-        />
-
-    <Button
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:text="-"
-        android:layout_marginTop="16dp"
-        android:onClick="decrement"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Price"
-        android:textSize="16sp"
-        android:textAllCaps="true"
-        android:layout_marginTop="16dp"
         android:textColor="#616161"
-        />
+        android:id="@+id/textView"
+        android:layout_above="@+id/order_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
     <TextView
         android:id="@+id/price_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$10"
-        android:textSize="16sp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="$0"
+        android:textAppearance="?android:textAppearanceLarge"
         android:textAllCaps="true"
         android:textColor="#000000"
-        android:layout_marginTop="16dp"
-        />
+        android:layout_above="@+id/order_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/order_button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="order"
-        android:layout_marginTop="16dp"
-        android:onClick="submitOrder"/>
+        android:textColor="#FFFFFF"
+        android:background="#1E88E5"
+        android:textAllCaps="true"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:onClick="submitOrder"
+        android:layout_alignParentBottom="true" />
 
-</LinearLayout>
+</RelativeLayout>
