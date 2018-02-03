@@ -11,45 +11,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:padding="20dp"
         android:gravity="center"
+        android:padding="20dp"
         android:text="MJ Online Coffee Shop"
+        android:textAllCaps="true"
         android:textAppearance="?android:textAppearanceLarge"
-        android:textStyle="bold"
-        android:textAllCaps="true"/>
+        android:textStyle="bold" />
 
     <LinearLayout
 
         android:id="@+id/quantity_control"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/shop_title"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/shop_title"
+        android:orientation="horizontal"
         android:padding="8dp">
 
         <TextView
             android:id="@+id/enter_quantity"
             android:layout_width="0dp"
-            android:layout_weight="3"
             android:layout_height="wrap_content"
+            android:layout_weight="3"
             android:text="Enter Quantity:"
-            android:textAppearance="?android:textAppearanceMedium"
             android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#616161" />
 
         <Button
-            android:id="@+id/button_plus"
+            android:id="@+id/button_minus"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="+"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#FFFFFF"
-            style="?android:attr/borderlessButtonStyle"
             android:background="#64B5F6"
-            android:onClick="increment" />
+            android:onClick="decrement"
+            android:text="-"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:id="@+id/quantity_text_view"
@@ -58,21 +58,21 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="1"
-            android:textAppearance="?android:textAppearanceMedium"
             android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#000000" />
 
         <Button
-            android:id="@+id/button_minus"
+            android:id="@+id/button_plus"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="-"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="#FFFFFF"
-            style="?android:attr/borderlessButtonStyle"
             android:background="#64B5F6"
-            android:onClick="decrement" />
+            android:onClick="increment"
+            android:text="+"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 
@@ -81,32 +81,32 @@
         android:id="@+id/sugar_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/quantity_control"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/quantity_control"
+        android:orientation="horizontal"
         android:padding="8dp">
 
         <TextView
             android:id="@+id/sugar"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Want sugar?"
-            android:textAppearance="?android:textAppearanceMedium"
             android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#616161" />
 
         <ToggleButton
             android:id="@+id/sugar_button"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            style="?android:attr/borderlessButtonStyle"
             android:background="#64B5F6"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:textAppearanceMedium"
             android:onClick="includeSugar"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#FFFFFF"
             android:textOff="NO"
             android:textOn="YES" />
 
@@ -117,75 +117,76 @@
         android:id="@+id/milk_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/sugar_bar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/sugar_bar"
+        android:orientation="horizontal"
         android:padding="8dp">
 
         <TextView
             android:id="@+id/milk"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Want milk?"
-            android:textAppearance="?android:textAppearanceMedium"
             android:textAllCaps="true"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#616161" />
 
         <ToggleButton
             android:id="@+id/milk_button"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            style="?android:attr/borderlessButtonStyle"
             android:background="#64B5F6"
-            android:textColor="#FFFFFF"
-            android:textAppearance="?android:textAppearanceMedium"
             android:onClick="includeMilk"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#FFFFFF"
             android:textOff="NO"
-            android:textOn="YES"/>
+            android:textOn="YES" />
 
     </LinearLayout>
 
-    <TextView
+
+    <!--<TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="Price Total:"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:textAllCaps="true"
-        android:textColor="#616161"
-        android:id="@+id/textView"
         android:layout_above="@+id/order_button"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Price Total:"
+        android:textAllCaps="true"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#616161" />-->
 
     <TextView
         android:id="@+id/price_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="$0"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:textAllCaps="true"
-        android:textColor="#000000"
         android:layout_above="@+id/order_button"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:text="$0"
+        android:textAllCaps="true"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="#000000" />
 
     <Button
         android:id="@+id/order_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="order"
-        android:textColor="#FFFFFF"
+        android:layout_alignParentBottom="true"
         android:background="#1E88E5"
+        android:onClick="submitOrder"
+        android:text="order"
         android:textAllCaps="true"
         android:textAppearance="?android:textAppearanceLarge"
-        android:onClick="submitOrder"
-        android:layout_alignParentBottom="true" />
+        android:textColor="#FFFFFF" />
 
 </RelativeLayout>

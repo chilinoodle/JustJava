@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         int total = 0;
         total = quantity * 5 + sugar_quantity + milk_quantity;
-        displayPrice(total);
+        String priceMessage = "Total price: $" + total + "\nThank you!";
+        displayMessage(priceMessage);
     }
 
     /**
@@ -82,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
-
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
+    }
 
 }
