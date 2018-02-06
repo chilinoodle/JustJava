@@ -2,6 +2,7 @@ package com.example.android.justjava;
 
 
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -61,10 +62,19 @@ public class MainActivity extends AppCompatActivity {
      */
 
     public void submitOrder(View view) {
-        int total = 0;
-        total = quantity * 5 + sugar_quantity + milk_quantity;
-        String priceMessage = "Total price: $" + total + "\nThank you!";
-        displayMessage(priceMessage);
+        displayMessage(createOrderSummary(calculatePrice(quantity,10)+sugar_quantity+milk_quantity));
+    }
+
+    private int calculatePrice(int numberOfCups, int cupPrice) {
+        int price = numberOfCups * cupPrice;
+        return price;
+    }
+
+    private String createOrderSummary(int priceOfOrder) {
+        return "Name: Mazen\n" +
+                "Quantity: " + quantity +"\n"+
+                "Total: " + priceOfOrder + "\n"+
+                "Thank You!";
     }
 
     /**
@@ -76,19 +86,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method displays the given value on the screen
-     */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-
-    /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
 
 }
