@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
 <RelativeLayout
     android:id="@+id/root_view"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/shop_title"
@@ -20,7 +20,19 @@
         android:text="Online Coffee Shop"
         android:textAllCaps="true"
         android:textSize="32sp"
-        android:textAppearance="?android:textAppearanceLarge"/>
+        android:textAppearance="?android:textAppearanceLarge"
+        android:onClick="showOnMap"/>
+
+    <EditText
+        android:id="@+id/name_field"
+        android:inputType="textCapWords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/shop_title"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:hint="Name"/>
 
     <LinearLayout
 
@@ -29,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/shop_title"
+        android:layout_below="@+id/name_field"
         android:orientation="horizontal"
         android:padding="8dp">
 
@@ -153,20 +165,51 @@
 
     </LinearLayout>
 
+    <LinearLayout
 
-    <TextView
-        android:id="@+id/order_summary_text_view"
-        android:layout_width="wrap_content"
+        android:id="@+id/whipped_cream"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/order_button"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:text="$0"
-        android:textAllCaps="true"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:textColor="#000000" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/milk_bar"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Toppings:"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textAllCaps="true"
+            android:textColor="#616161"/>
+
+        <CheckBox
+            android:id="@+id/whip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Want Whipped Cream?"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textAllCaps="true"
+            android:textColor="#616161"
+            android:onClick="hasWhippedCream"/>
+
+        <CheckBox
+            android:id="@+id/choco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Want Chocolate?"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textAllCaps="true"
+            android:textColor="#616161"
+            android:onClick="hasChocolate"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/order_button"
@@ -181,3 +224,4 @@
         android:textColor="#FFFFFF" />
 
 </RelativeLayout>
+
