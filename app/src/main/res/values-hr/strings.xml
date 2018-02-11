@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="chocolate_bar">Hoćete li čokoladu?</string>
+    <string name="cream_bar">Hoćete li vrhnje?</string>
+    <string name="milk_bar_text">Hoćete li mlijeko?</string>
+    <string name="name_field_hint">Ime</string>
+    <string name="order_button_text">Naruči</string>
+    <string name="order_quantity">Količina: </string>
+    <string name="order_subject"><xliff:g id="name" example="Amy">%s</xliff:g>Narudžba</string>
+    <string name="order_summary">Naručili ste:</string>
+    <string name="order_summary_name">Ime: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="quantity_control">Unesite količinu:</string>
+    <string name="sugar_bar_text">Hoćete li šečera?</string>
+    <string name="thank_you">Hvala vam što ste naručili preko Online Coffee Shop aplikaciju!</string>
+    <string name="toast_above100">Nažalost, ne možemo dostaviti više od 100 kava</string>
+    <string name="toast_subzero">Morate naručiti barem jednu kavu</string>
+    <string name="toppings">Dodaci:</string>
+    <string name="total">Ukupni iznos: </string>
+    <string name="yes">DA</string>
+    <string name="No">NE</string>
+</resources>
