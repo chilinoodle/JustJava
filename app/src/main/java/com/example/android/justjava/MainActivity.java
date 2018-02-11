@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void increment(View view) {
         if (quantity == 100) {
-            Toast noAboveHundred = Toast.makeText(getApplicationContext(),getString(R.string.toast_above100),Toast.LENGTH_LONG);
+            Toast noAboveHundred = Toast.makeText(getApplicationContext(),getString(R.string.toast_above100),Toast.LENGTH_SHORT);
             noAboveHundred.show();
         }
         if (quantity < 100) {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void decrement(View view) {
         if (quantity == 1) {
-            Toast noBelowOne = Toast.makeText(getApplicationContext(),getString(R.string.toast_subzero),Toast.LENGTH_LONG);
+            Toast noBelowOne = Toast.makeText(getApplicationContext(),getString(R.string.toast_subzero),Toast.LENGTH_SHORT);
             noBelowOne.show();
         }
         if (quantity > 1) {

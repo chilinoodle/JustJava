@@ -2,6 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="chocolate_bar">Hoćete li čokoladu?</string>
     <string name="cream_bar">Hoćete li vrhnje?</string>
+    <string name="essentials">Glavni dodaci:</string>
     <string name="milk_bar_text">Hoćete li mlijeko?</string>
     <string name="name_field_hint">Ime</string>
     <string name="order_button_text">Naruči</string>

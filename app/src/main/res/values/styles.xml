@@ -8,4 +8,22 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="headers">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+
+    <style name="headers.subtext">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="buttons">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAppearance">?android:textAppearanceLarge</item>
+        <item name="android:textColor">@color/colorButtonsText</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
 </resources>
