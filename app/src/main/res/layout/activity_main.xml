@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:padding="20dp"
-        android:text="Online Coffee Shop"
+        android:text="@string/main_header"
         android:textAllCaps="true"
         android:textSize="32sp"
         android:textAppearance="?android:textAppearanceLarge"
@@ -32,7 +32,7 @@
         android:layout_marginBottom="16dp"
         android:padding="8dp"
         android:textAppearance="?android:textAppearanceMedium"
-        android:hint="Name"/>
+        android:hint="@string/name_field_hint"/>
 
     <LinearLayout
 
@@ -50,7 +50,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:text="Enter Quantity:"
+            android:text="@string/quantity_control"
             android:textAllCaps="true"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#616161" />
@@ -108,7 +108,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Want sugar?"
+            android:text="@string/sugar_bar_text"
             android:textAllCaps="true"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#616161" />
@@ -123,8 +123,8 @@
             android:onClick="includeSugar"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#FFFFFF"
-            android:textOff="NO"
-            android:textOn="YES" />
+            android:textOff="@string/No"
+            android:textOn="@string/yes" />
 
     </LinearLayout>
 
@@ -144,7 +144,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Want milk?"
+            android:text="@string/milk_bar_text"
             android:textAllCaps="true"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#616161" />
@@ -159,15 +159,15 @@
             android:onClick="includeMilk"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#FFFFFF"
-            android:textOff="NO"
-            android:textOn="YES" />
+            android:textOff="@string/No"
+            android:textOn="@string/yes" />
 
 
     </LinearLayout>
 
     <LinearLayout
 
-        android:id="@+id/whipped_cream"
+        android:id="@+id/toppings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -183,7 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
-            android:text="Toppings:"
+            android:text="@string/toppings"
             android:textAppearance="?android:textAppearanceMedium"
             android:textAllCaps="true"
             android:textColor="#616161"/>
@@ -193,7 +193,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Want Whipped Cream?"
+            android:text="@string/cream_bar"
             android:textAppearance="?android:textAppearanceMedium"
             android:textAllCaps="true"
             android:textColor="#616161"
@@ -203,7 +203,7 @@
             android:id="@+id/choco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Want Chocolate?"
+            android:text="@string/chocolate_bar"
             android:textAppearance="?android:textAppearanceMedium"
             android:textAllCaps="true"
             android:textColor="#616161"
@@ -218,7 +218,7 @@
         android:layout_alignParentBottom="true"
         android:background="#1E88E5"
         android:onClick="submitOrder"
-        android:text="order"
+        android:text="@string/order_button_text"
         android:textAllCaps="true"
         android:textAppearance="?android:textAppearanceLarge"
         android:textColor="#FFFFFF" />

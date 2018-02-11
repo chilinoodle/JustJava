@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void increment(View view) {
         if (quantity == 100) {
-            Toast noAboveHundred = Toast.makeText(getApplicationContext(),"We can't deliver more than 100 cups of Coffee",Toast.LENGTH_LONG);
+            Toast noAboveHundred = Toast.makeText(getApplicationContext(),getString(R.string.toast_above100),Toast.LENGTH_LONG);
             noAboveHundred.show();
         }
         if (quantity < 100) {
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void decrement(View view) {
         if (quantity == 1) {
-            Toast noBelowOne = Toast.makeText(getApplicationContext(),"You can't order 0 cups of coffee",Toast.LENGTH_LONG);
+            Toast noBelowOne = Toast.makeText(getApplicationContext(),getString(R.string.toast_subzero),Toast.LENGTH_LONG);
             noBelowOne.show();
         }
         if (quantity > 1) {
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         //Intent sendOrderByMail = new Intent(Intent.ACTION_SEND);
         Intent sendOrderByMail = new Intent(Intent.ACTION_SENDTO);
         String toAddress = "mazen426@gmail.com";
-        String subject = name + "'s Coffee Order";
+        String subject = getString(R.string.order_subject,name);
         String message = createOrderSummary(calculatePrice(quantity),hasWhippedCream,hasChocolate);
         sendOrderByMail.setType("text/plain");
         sendOrderByMail.setData(Uri.parse("mailto:"));
@@ -130,13 +130,13 @@ public class MainActivity extends AppCompatActivity {
     private String createOrderSummary(int priceOfOrder , boolean hasWhippedCream, boolean hasChocolate) {
         EditText nameText = (EditText) findViewById(R.id.name_field);
         String name = nameText.getText().toString();
-        return "Order Summary:" + "\n" +
-                "Name: " + name + "\n" +
-                "Quantity: " + quantity +"\n" +
-                "Want Whipped Cream? " + hasWhippedCream + "\n" +
-                "Add Chocolate? " + hasChocolate + "\n" +
-                "Total: " + priceOfOrder + "\n" +
-                "Thank You!" + "\n";
+        return getString(R.string.order_summary) + "\n" +
+                getString(R.string.order_summary_name,name) + "\n" +
+                getString(R.string.order_quantity) + quantity +"\n" +
+                getString(R.string.cream_bar) + hasWhippedCream + "\n" +
+                getString(R.string.chocolate_bar) + hasChocolate + "\n" +
+                getString(R.string.total) + priceOfOrder + "\n" +
+                getString(R.string.thank_you);
     }
 
     /**
